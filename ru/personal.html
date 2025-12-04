@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAAOC</title>
+    <link rel="icon" href="../img/logoHead.avif">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/history.css">
+    <link rel="stylesheet" href="../css/modal.css">
+</head>
+
+<body data-page="personal">
+
+
+    <div id="thankYouModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Спасибо!</h2>
+                <button class="close-btn" onclick="closeThankYouModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">✓</div>
+                <p>Ваши данные успешно отправлены.</p>
+                <p>Мы свяжемся с вами в ближайшее время.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="ok-btn" onclick="closeThankYouModal()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <a href="./index.html" class="header__logo-link">
+                    <img src="../img/logo.avif" alt="logo" width="181" height="63" loading="lazy"
+                        class="header__logo-img">
+                    <span class="header__logo-text">Объединяем опыт <br>
+                        — укрепляем доверие</span>
+                </a>
+            </div>
+            <ul class="header__nav">
+                <li class="header__nav-item"><a href="#hero" class="header__nav-link">О нас</a></li>
+                <li class="header__nav-item"><a href="./history.html" class="header__nav-link">История</a>
+                </li>
+                <li class="header__nav-item"><a href="#management" class="header__nav-link">Руководство</a></li>
+                <li class="header__nav-item"><a href="#benefits" class="header__nav-link">Участники и привилегии</a>
+                </li>
+                <li class="header__nav-item"><a href="./news.html" class="header__nav-link">Новости</a></li>
+            </ul>
+            <div class="header__actions">
+                <button class="header__lang-btn" type="button">
+                    <img src="../img/world.svg" alt="world" class="header__lang-icon" width="20" height="20"
+                        loading="lazy">
+                    <p class="header__lang-text">Узбекский</p>
+                    <img src="../img/chevron-down.svg" alt="arrow" class="header__lang-arrow" width="20" height="20"
+                        loading="lazy">
+                    <ul class="header__lang-menu">
+                    </ul>
+                </button>
+
+                <button class="hamburger__open-btn" id="hamburgerOpen">
+                    <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1.45703H17M1 7.45703H17M1 13.457H17" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="hamburger__overlay" id="hamburgerOverlay">
+        <div class="hamburger__menu" id="hamburgerMenu">
+            <div class="hamburger__header">
+                <div class="hamburger__logo">
+                    <img src="../img/logo.avif" alt="logo" width="120" height="42" loading="lazy">
+                </div>
+                <button class="hamburger__close-btn" id="hamburgerClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="hamburger__nav">
+                <ul class="hamburger__nav-list">
+                    <li class="hamburger__nav-item">
+                        <a href="#hero" class="hamburger__nav-link">О нас</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="./history.html" class="hamburger__nav-link">История</a>
+                    </li>
+
+                    <li class="hamburger__nav-item">
+                        <a href="#management" class="hamburger__nav-link">Руководство</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="#benefits" class="hamburger__nav-link">Участники и привилегии</a>
+                    </li>
+                    <li class="hamburger__nav-item">
+                        <a href="./news.html" class="hamburger__nav-link">Новости</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <div class="hamburger__actions">
+                <div class="hamburger__lang-selector">
+                    <button class="hamburger__lang-btn">
+                        <img src="../img/world.svg" alt="world" width="20" height="20">
+                        <span>Узбекский</span>
+                        <img src="../img/chevron-down.svg" alt="arrow" width="16" height="16">
+                        <ul class="hamburger__lang-menu">
+                            <li class="hamburger__lang-item">Русский</li>
+                            <li class="hamburger__lang-item">English</li>
+                        </ul>
+                    </button>
+                </div>
+                <a href="#app" class="hamburger__join-btn">Стать участником</a>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="personal">
+        <div class="personal__container">
+            <h2 class="personal__title">Зафар Хошимов</h2>
+            <h3 class="personal__subtitle">Добро пожаловать в личный кабинет!</h3>
+        </div>
+    </section>
+
+
+    <section class="list">
+        <div class="list__container">
+            <h2 class="list__title">Чёрный список</h2>
+            <p class="list__description">Мошенники, ненадёжные компании и агентства в нашей сфере</p>
+
+            <div class="list__box">
+                <div class="list__col accordion-header">
+                    <h3 class="list__col-title">Ненадёжные сотрудники</h3>
+                    <img class="arrow-icon" src="../img/personal-arrow.svg" loading="lazy" alt="personal arrow">
+                </div>
+
+                <div class="accordion-content">
+                    <table>
+                        <tr class="accardion-tr">
+                            <th>Ф.И.О.</th>
+                            <th>Причина</th>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                                Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
+                        </tr>
+
+                        <tr class="wwww">
+                            <td class="cell-with-image">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
+                        </tr>
+
+                        <tr class="wwww">
+                            <td class="cell-with-image wwww" colspan="2">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>
+                                — Не соблюдает дедлайны. Порученные задачи постоянно задерживаются. Не соблюдает<br>
+                                дедлайны. Порученные задачи постоянно задерживаются. Не соблюдает дедлайны. <br>
+                                Порученные
+                                задачи постоянно задерживаются.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="list__box">
+                <div class="list__col accordion-header">
+                    <h3 class="list__col-title">Мошеннические компании</h3>
+                    <img class="arrow-icon" src="../img/personal-arrow.svg" loading="lazy" alt="personal arrow">
+                </div>
+
+                <div class="accordion-content">
+                    <table>
+                        <tr>
+                            <th>F.I.SH</th>
+                            <th>Sababi</th>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
+                        </tr>
+
+                        <tr class="wwww">
+                            <td class="cell-with-image">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
+                        </tr>
+
+                        <tr class="wwww">
+                            <td class="cell-with-image wwww" colspan="2">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>
+                                — Не соблюдает дедлайны. Порученные задачи постоянно задерживаются. Не соблюдает<br>
+                                дедлайны. Порученные задачи постоянно задерживаются. Не соблюдает дедлайны. <br>
+                                Порученные
+                                задачи постоянно задерживаются.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="list__box">
+                <div class="list__col accordion-header">
+                    <h3 class="list__col-title">Ненадёжные агентства </h3>
+                    <img class="arrow-icon" src="../img/personal-arrow.svg" loading="lazy" alt="personal arrow">
+                </div>
+
+                <div class="accordion-content">
+                    <table>
+                        <tr>
+                            <th>F.I.SH</th>
+                            <th>Sababi</th>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
+                        </tr>
+
+                        <tr class="wwww">
+                            <td class="cell-with-image">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
+                        </tr>
+
+                        <tr class="wwww">
+                            <td class="cell-with-image wwww" colspan="2">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>
+                                — Не соблюдает дедлайны. Порученные задачи постоянно задерживаются. Не соблюдает<br>
+                                дедлайны. Порученные задачи постоянно задерживаются. Не соблюдает дедлайны. <br>
+                                Порученные
+                                задачи постоянно задерживаются.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="cell-with-image">
+                              Эргашев Отабек Зафар оглы
+                            </td>
+                            <td>— Не соблюдает дедлайны. Порученные задачи постоянно задерживаются.</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="noNews">
+        <div class="noNews__container">
+            <h2 class="noNews__title">Мои новости</h2>
+            <img class="noNews__images" src="../img/noNews.avif" loading="lazy" alt="noNews">
+            <h3 class="noNews__subtitle">У вас пока нет новостей </h3>
+
+            <button class="noNews__btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="5" fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.7719 7.31507C14.9737 7.11333 15.2474 7 15.5327 7C15.8181 7 16.0917 7.11333 16.2935 7.31507L17.6849 8.70647C17.8867 8.90827 18 9.18193 18 9.46728C18 9.75262 17.8867 10.0263 17.6849 10.2281L16.8316 11.0814L13.9186 8.16842L14.7719 7.31507ZM13.1578 8.92922L8.3153 13.7717C8.11348 13.9735 8.00006 14.2471 8 14.5325V15.9239C8 16.2093 8.11337 16.483 8.31518 16.6848C8.51699 16.8866 8.7907 17 9.0761 17H10.4675C10.7529 16.9999 11.0265 16.8865 11.2283 16.6847L16.0708 11.8422L13.1578 8.92922Z"
+                        fill="black" />
+                </svg>
+                Добавить новость
+            </button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__brand">
+                <a class="footer__logo-link" href="#">
+                    <img class="footer__logo" src="../img/footlogo.avif" alt="logo" width="163" height="50"
+                        loading="lazy">
+                </a>
+                <ul class="footer__social-list">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="../img/footer/telegram.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="../img/footer/instagram.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="../img/footer/youtube.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" target="_blank" href="#">
+                            <img class="footer__social-icon" src="../img/footer/facebook.svg" alt="social media icon"
+                                width="32" height="32" loading="lazy">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <div class="footer__links">
+                    <ul class="footer__links-list">
+                        <li class="footer__links-item"><a class="footer__link" href="#goal">О нас</a>
+                        </li>
+                        <li class="footer__links-item"><a class="footer__link" href="#management">Руководство</a></li>
+                        <li class="footer__links-item"><a class="footer__link" href="#benefits">Участники и
+                                привилегии</a>
+                        </li>
+                        <li class="footer__links-item"><a class="footer__link" href="#news">Новости</a></li>
+                    </ul>
+
+                    <p class="footer__description">Ассоциация, объединяющая бухгалтерские аутсорсинговые компании и
+                        создающая профессиональную и надежную систему.</p>
+                </div>
+                <div class="footer__contact">
+                    <ul class="footer__contact-list">
+                        <li class="footer__contact-item">
+                            <a class="footer__contact-link" href="https://yandex.uz/maps/-/CLQ2nDO3">
+                                <span class="footer__contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <ellipse cx="10" cy="9.16699" rx="2.5" ry="2.5" stroke="currentColor"
+                                            stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M14.7141 13.8806L11.1783 17.4164C10.5275 18.0665 9.47316 18.0665 8.82242 17.4164L5.28575 13.8806C2.68236 11.2771 2.68243 7.05602 5.28591 4.45258C7.8894 1.84914 12.1104 1.84914 14.7139 4.45258C17.3174 7.05602 17.3175 11.2771 14.7141 13.8806V13.8806Z"
+                                            stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                Город Ташкент, Чиланзарский район, квартал «Ц», дом 7/1
+                            </a>
+                        </li>
+                        <li class="footer__contact-item">
+                            <a class="footer__contact-link" href="tel: +99871-233-14-10">
+                                <span class="footer__contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.7259 5.27161C11.7258 5.43919 12.6341 5.91146 13.3592 6.6351C14.0843 7.35873 14.5538 8.26518 14.7255 9.26304M10.8786 2C12.657 2.30088 14.279 3.14259 15.5689 4.42609C16.8589 5.7134 17.6985 7.33206 18 9.10688M16.6108 16.1681C16.6108 16.1681 15.6452 17.1164 15.4086 17.3944C15.0232 17.8058 14.569 18 13.9737 18C13.9164 18 13.8553 18 13.7981 17.9962C12.6646 17.9238 11.6113 17.482 10.8213 17.105C8.6612 16.0614 6.76445 14.5799 5.18827 12.7022C3.88687 11.1369 3.01673 9.6896 2.44045 8.13568C2.08552 7.18733 1.95576 6.44846 2.01301 5.75148C2.05117 5.30588 2.22291 4.93644 2.53967 4.62033L3.84107 3.32159C4.02808 3.14639 4.22653 3.05118 4.42117 3.05118C4.6616 3.05118 4.85624 3.1959 4.97836 3.31778C4.98218 3.32159 4.986 3.3254 4.98981 3.32921C5.22261 3.5463 5.44397 3.771 5.67677 4.01095C5.79508 4.13282 5.9172 4.2547 6.03933 4.38038L7.08121 5.42014C7.48575 5.82385 7.48575 6.19709 7.08121 6.60081C6.97053 6.71126 6.86367 6.82171 6.753 6.92835C6.43242 7.25589 6.68425 7.00457 6.35222 7.30164C6.34459 7.30926 6.33696 7.31307 6.33314 7.32068C6.00493 7.64823 6.06599 7.96815 6.13469 8.18524C6.1385 8.19667 6.14232 8.20809 6.14614 8.21952C6.4171 8.8746 6.79874 9.49159 7.37884 10.2267L7.38265 10.2305C8.43598 11.5254 9.54656 12.5347 10.7716 13.3078C10.9281 13.4069 11.0884 13.4868 11.241 13.563C11.3784 13.6316 11.5082 13.6963 11.6189 13.7649C11.6341 13.7725 11.6494 13.7839 11.6647 13.7915C11.7944 13.8563 11.9166 13.8867 12.0425 13.8867C12.3593 13.8867 12.5577 13.6887 12.6226 13.6239L13.3707 12.8774C13.5004 12.7479 13.7065 12.5918 13.9469 12.5918C14.1836 12.5918 14.3782 12.7403 14.4965 12.8698C14.5003 12.8736 14.5003 12.8736 14.5041 12.8774L16.607 14.976C17.0001 15.3644 16.6108 16.1681 16.6108 16.1681Z"
+                                            stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                +998 90-338-70-00
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">2025. Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="../js/app.js"></script>
+    <script defer src="../js/ariza.js"></script>
+    <script defer src="../js/modal.js"></script>
+    <script defer src="../js/question.js"></script>
+</body>
+
+</html>
