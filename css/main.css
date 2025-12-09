@@ -881,6 +881,9 @@ button {
     position: relative;
 }
 
+.members__carousel {
+    width: 100%;
+}
 
 .members__img {
     max-width: 327px;
@@ -890,6 +893,7 @@ button {
 
 .members__info {
     flex-shrink: 0;
+    min-height: 454px;
 }
 
 .members__track {
@@ -926,15 +930,6 @@ button {
     font-weight: 400;
     color: rgba(105, 117, 131, 1);
     max-width: 326px;
-}
-
-.members__gradient {
-    background: linear-gradient(90.78deg, rgba(242, 243, 247, 0) 0.67%, #F2F3F7 99.33%);
-    width: 527px;
-    height: 491px;
-    position: absolute;
-    top: 98px;
-    right: 0;
 }
 
 
@@ -2478,6 +2473,7 @@ img {
 
     .members__track {
         gap: 20px;
+        animation: scrollCards 7s linear infinite;
     }
 
     .members__info {
